@@ -1,0 +1,64 @@
+<!--miniprogram/pages/home_center/common_panel/index.js.wxml-->
+<wxs src="./index.wxs" module="utils" />
+
+<image style="position: absolute; left: 0rpx; top: -272rpx"  class="common-panel-backgroud" src="{{forest}}" />
+<navbar device_name="智能开关" bind:jumpTodeviceEditPage="jumpTodeviceEditPage" />
+
+
+<image style="position: relative; left: 68rpx; top: 905rpx; width: 155rpx; height: 150rpx; display: block; box-sizing: border-box" src="../../../image/开关.png" />
+
+
+<image style="position: relative; width: 155rpx; height: 150rpx; display: block; box-sizing: border-box; left: 298rpx; top: 755rpx" src="../../../image/定时.png" />
+
+
+<image style="position: relative; width: 155rpx; height: 150rpx; display: block; box-sizing: border-box; left: 530rpx; top: 605rpx" src="../../../image/电量.png" />
+
+
+<text style="position: relative; width: 118rpx; height: 52rpx; display: block; box-sizing: border-box; left: 87rpx; top: 605rpx">倒计时</text>
+
+<text style="position: relative; width: 75rpx; height: 52rpx; display: block; box-sizing: border-box; left: 338rpx; top: 554rpx">定时</text>
+
+
+<text style="position: relative; width: 75rpx; height: 52rpx; display: block; box-sizing: border-box; left: 570rpx; top: 502rpx">电量</text>
+<image style="position: relative; left: 0rpx; top: -568rpx" src="../../../image/插座.png" />
+
+
+<!-- <view class="common-panel-header">
+  <view class="common-panel-header-block">
+    <view class="common-panel-header-dpName">{{titleItem.name}}</view>
+    <view class="common-panel-header-dpValue">{{titleItem.value}}</view>
+  </view>
+</view>
+
+<!-- <block wx:if="{{isRoDpListShow}}">
+  <view class="statuslist">
+    <block wx:for="{{roDpList}}" wx:key="{{item.code}}" wx:for-item="item" wx:for-index='idx'>
+      <view class="{{utils.countDpItem(roDpListLength,idx)}}">
+        <view class="roDpItem-dpName">{{item.code}}</view>
+        <view class="roDpItem-status">{{item.value}}</view>
+      </view>
+    </block>
+  </view>
+</block> -->
+
+<view style="position: relative; width: 750rpx; background: #d3d3d3; min-height: 100px; left: 0rpx; top: -568rpx; height: 195rpx; display: block; box-sizing: border-box">
+  <block wx:if="{{isRwDpListShow}}">
+    <block wx:for="{{rwDpList}}" wx:key="{{item.code}}" wx:for-item="item">
+      <block wx:if="{{item.type === 'Boolean'}}">
+        <Boolean model:isChecked="{{item.value}}" dpCode="{{item.code}}" dpName="{{item.name}}" bind:sendDp="sendDp" />
+      </block>
+      <!-- <block wx:if="{{item.type === 'Integer'}}">
+        <Integer model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
+          bind:sendDp="sendDp" />
+      </block>
+      <block wx:if="{{item.type === 'Enum'}}">
+        <Enum model:value="{{item.value}}" values="{{item.values}}" dpCode="{{item.code}}" dpName="{{item.name}}"
+          bind:sendDp="sendDp" />
+      </block> -->
+    </block>
+  </block>
+</view>
+
+ -->
+
+
